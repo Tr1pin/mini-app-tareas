@@ -2,7 +2,7 @@ services:
   # ---- Apache ----
   apache:
     build: ./apache
-    container_name: lamp-apache
+    container_name: lamp-apache2
     ports:
       - "8080:80"
     volumes:
@@ -19,7 +19,7 @@ services:
   # ---- PHP-FPM ----
   php-fpm:
     build: ./php
-    container_name: lamp-php
+    container_name: lamp-php2
     volumes:
       - ./src:/var/www/html
     networks:
@@ -32,7 +32,7 @@ services:
   # ---- MariaDB ----
   mariadb:
     image: mariadb:11
-    container_name: lamp-mariadb
+    container_name: lamp-mariadb2
     environment:
       MARIADB_ROOT_PASSWORD: rootpass
       MARIADB_DATABASE: lamp_db
